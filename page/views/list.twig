@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>restaurant izis</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> -->
+   <script src="jquery-3.2.1.js"></script>
+   <script src="bootstrap.min.js"></script>
+   <link rel="stylesheet" href="bootstrap.min.css">
+
+
+</head>
+
+<style>
+    table,td{
+        border:1px solid black;
+        border-collapse: collapse;
+       
+    }
+    table
+    {
+        width: auto;
+        margin: 0 auto;
+        height: 400px;
+    }
+    thead{
+        height: 30px;
+    }
+    td
+    {
+        cursor: pointer;
+        background-color: #ccc;
+         font-size: 15px;
+         font-weight: bold;
+    }
+    td:hover{
+        background-color: #eee;
+    }
+    h1,h2
+    {
+        text-align: center;
+    }
+</style>
+<body>
+<h1>MENU</h1>
+<h2>Faites votre choix</h2>
+<table class="table table-responsive-lg table-strip">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nom</th>
+            <th>description</th>
+            <th>prix</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for line in data %}
+        <tr>
+            {% for value in line  %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+<script>
+    $(function(){
+        $('td').on('click',function(){
+            alert('vous avez fait le bon choix \n bonne appetit')
+        })
+    })
+</script>
+</body>
+
+</html>
